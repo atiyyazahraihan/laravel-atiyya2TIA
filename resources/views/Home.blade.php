@@ -168,16 +168,20 @@
                                 <label for="nama" class="form-label">Nama</label>
                                 <input type="text" ... name="nama">
                             </div>
+
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="text" ... name="email">
                             </div>
+
                             <div class="mb-3">
                                 <label for="pertanyaan" class="form-label">Pertanyaan</label>
-                                <textarea ... name="pertanyaan" ...>
+                                <textarea class="form-control" id="pertanyaan" name="pertanyaan" rows="3"></textarea>
                             </div>
+
                             <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
                         </form>
+                        
                     </div>
                 </div>
                 {{-- Alerts --}}

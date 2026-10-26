@@ -83,7 +83,7 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <h1 class="display-6 mb-2">Welcome Aboard!</h1>
+            <h1 class="display-6 mb-2">Atiyya-2TIA</h1>
             <p class="lead mb-0">A simple and elegant app using Bootstrap 5 and Laravel Blade.</p>
         </div>
     </section>
@@ -181,7 +181,7 @@
 
                             <button type="submit" class="btn btn-primary">Kirim Pertanyaan</button>
                         </form>
-                        
+
                     </div>
                 </div>
                 {{-- Alerts --}}

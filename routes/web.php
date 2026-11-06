@@ -8,6 +8,8 @@ use App\Http\Controllers\QuestionController;
 
 use App\Http\Controllers\PelangganController;
 
+use App\Http\Controllers\UserController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,5 +24,5 @@ Route::get('/dashboard', [\App\Http\Controllers\DashboardController::class, 'ind
 
 Route::resource('pelanggan', PelangganController::class);
 
-Route::put('/pelanggan/{pelanggan}', [PelangganController::class, 'update'])
-    ->name('pelanggan.update');
+Route::resource('user', UserController::class);
+

@@ -7,12 +7,16 @@ use Illuminate\Http\Request;
 
 class PelangganController extends Controller
 {
-    public function index()
-    {
-        $data['dataPelanggan'] = Pelanggan::all();
+    public function index(Request $request) {
+        $query = Pelanggan::query();
+
+        if ($request->filled('gender')) {
+            $query->where('gender', $request->gender);
+        }
+
+        $data['dataPelanggan'] = $query->paginate(10)->withQueryString();
         return view('admin.pelanggan.index', $data);
     }
-
 
     public function create()
     {
@@ -22,16 +26,16 @@ class PelangganController extends Controller
     public function store(Request $request){
 
 		//dd($request->all())
-		
+
 		$data['first_name'] = $request->first_name;
 		$data['last_name'] = $request->last_name;
 		$data['birthday'] = $request->birthday;
 		$data['gender'] = $request->gender;
 		$data['email'] = $request->email;
 		$data['phone'] = $request->phone;
-		
+
 		Pelanggan::create($data);
-		
+
 		return redirect()->route('pelanggan.index')->with('success','Penambahan Data Berhasil!');
     }
 
